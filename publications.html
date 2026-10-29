@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications — [Your Name]</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a class="brand" href="index.html">[Your Name]</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Publications</h1>
+    <p class="prose">[Replace the entries below with your real publication list, most recent first. Duplicate the &lt;li&gt; block for each paper.]</p>
+
+    <ul class="pub-list">
+      <li>
+        <div class="pub-title">[Paper title goes here]</div>
+        <div class="pub-meta">[Author list, with your name in <strong>bold</strong>] &middot; <em>[Journal name]</em>, [Year]</div>
+        <div class="pub-links">
+          <a href="#">DOI</a>
+          <a href="#">PDF</a>
+          <a href="#">arXiv</a>
+        </div>
+      </li>
+      <li>
+        <div class="pub-title">[Second paper title]</div>
+        <div class="pub-meta">[Authors] &middot; <em>[Journal / preprint server]</em>, [Year]</div>
+        <div class="pub-links">
+          <a href="#">DOI</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Preprints &amp; working papers</h2>
+    <ul class="pub-list">
+      <li>
+        <div class="pub-title">[Working paper / manuscript in preparation, e.g. the CO/Cu(100) field-effects study]</div>
+        <div class="pub-meta">In preparation, [Year]</div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="nav-wrap">
+    <span>&copy; <span id="year"></span> [Your Name]</span>
+    <span><a href="contact.html">[you@example.edu]</a></span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

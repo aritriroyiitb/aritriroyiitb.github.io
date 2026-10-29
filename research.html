@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — [Your Name]</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a class="brand" href="index.html">[Your Name]</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1>Research</h1>
+    <p class="prose">
+      [One paragraph framing your overall research program — the
+      question that ties your projects together, e.g. "how do external
+      perturbations such as electric fields, strain, or coordination
+      environment control chemisorption and reactivity at metal
+      surfaces."]
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="card">
+        <img src="assets/img/ontop-5x5centred-grid.gif" alt="CO/Cu(100) field-position grid scan">
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">DFT</span><span class="tag">VASP</span><span class="tag">d-band theory</span>
+          </div>
+          <h3>Field effects on CO/Cu(100) chemisorption</h3>
+          <p>Mapping how a localized external field's width and position shift
+             CO binding energy at ontop and bridge sites, and decomposing the
+             shift with a Newns&ndash;Anderson hybridization model.</p>
+          <a href="projects/co-cu100-field-effects.html">Case study &rarr;</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/img/ontop-widthscan.gif" alt="Placeholder image for a future project">
+        <div class="card-body">
+          <div class="card-tags"><span class="tag">Coming soon</span></div>
+          <h3>[Next project title]</h3>
+          <p>[Short description of a second project — add a new card like
+             this one for each additional project, and a matching page
+             under <code>projects/</code>.]</p>
+          <a href="#">Case study &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Methods &amp; tools</h2>
+    <div class="skills-grid">
+      <div class="skill-box"><strong>Electronic structure</strong>VASP, DFT+U, hybrid functionals</div>
+      <div class="skill-box"><strong>Modeling</strong>Newns&ndash;Anderson / d-band theory, custom field plugins</div>
+      <div class="skill-box"><strong>Analysis</strong>Python, py4vasp, NumPy/SciPy, Matplotlib</div>
+      <div class="skill-box"><strong>HPC</strong>SLURM clusters, large-scale job orchestration</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="nav-wrap">
+    <span>&copy; <span id="year"></span> [Your Name]</span>
+    <span><a href="contact.html">[you@example.edu]</a></span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Your Name] — PhD Researcher</title>
+<meta name="description" content="Personal academic site of [Your Name], PhD researcher working on first-principles electronic structure methods and electrochemical interfaces.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a class="brand" href="index.html">[Your Name]</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="tagline">PhD Researcher &middot; Computational Materials / Electrochemistry</div>
+      <h1>[Your Name]</h1>
+      <p>
+        I study how electric fields at electrochemical interfaces reshape
+        adsorbate bonding, using first-principles DFT and simple analytic
+        models (Newns&ndash;Anderson chemisorption theory) to connect
+        atomistic electronic structure to measurable reactivity trends.
+        Currently a PhD candidate at [Your University / Department].
+      </p>
+      <div class="hero-links">
+        <a class="btn filled" href="research.html">See my research &rarr;</a>
+        <a class="btn" href="cv.html">View CV</a>
+        <a class="btn" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <img src="assets/img/ontop-5x5centred-grid.gif" alt="CO adsorbed on Cu(100), 3D structure under a scanned external field grid">
+      <figcaption>CO on Cu(100), ontop site — field-position grid scan (DFT, VASP)</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Featured project</h2>
+    <div class="project-grid">
+      <div class="card">
+        <img src="assets/img/ontop-5x5centred-widthscan.gif" alt="Width scan animation of the applied field over the CO/Cu(100) ontop structure">
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">DFT / VASP</span>
+            <span class="tag">Electric fields</span>
+            <span class="tag">Newns&ndash;Anderson</span>
+          </div>
+          <h3>Field effects on CO chemisorption on Cu(100)</h3>
+          <p>
+            How localized electric fields of varying width and position
+            change CO binding at ontop and bridge sites, decomposed into
+            hybridization, orthogonalization and electrostatic
+            contributions with a Newns&ndash;Anderson $d$-band model.
+          </p>
+          <a href="projects/co-cu100-field-effects.html">Read the case study &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>About</h2>
+    <div class="prose">
+      <p>
+        [Write 2-3 short paragraphs here: your research focus, the
+        broader question you care about, your academic background
+        (BTech/MTech/PhD institutions and years), and what you're looking
+        for next (postdoc, industry, collaborations).]
+      </p>
+      <p>
+        [Optional: a line about outside-of-research interests to make the
+        page feel personal.]
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="nav-wrap">
+    <span>&copy; <span id="year"></span> [Your Name]</span>
+    <span><a href="contact.html">[you@example.edu]</a></span>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

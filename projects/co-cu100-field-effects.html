@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field effects on CO/Cu(100) chemisorption — [Your Name]</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-wrap">
+    <a class="brand" href="../index.html">[Your Name]</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">About</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../cv.html">CV</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="breadcrumb"><a href="../research.html">Research</a> / Field effects on CO/Cu(100)</div>
+
+  <section>
+    <h1>Electric-field effects on CO chemisorption at Cu(100)</h1>
+    <div class="card-tags" style="margin-bottom: 18px;">
+      <span class="tag">Density functional theory</span>
+      <span class="tag">VASP</span>
+      <span class="tag">Newns&ndash;Anderson model</span>
+      <span class="tag">Custom field plugin</span>
+    </div>
+    <div class="prose">
+      <p>
+        Electric fields at an electrochemical interface don't just shift
+        adsorption energies uniformly &mdash; their <em>spatial profile</em>
+        (how wide the field is, and where it is centered relative to the
+        adsorbate) changes which orbitals respond and by how much. This
+        project uses a custom VASP plugin to apply localized,
+        Gaussian-shaped external fields over a Cu(100) slab with a CO
+        molecule adsorbed at the ontop or bridge site, and tracks how the
+        adsorption energy, induced dipole, and 5&sigma;/2&pi;* orbital
+        hybridization respond as the field's width and center position are
+        scanned systematically.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Structures &amp; field scans</h2>
+    <div class="figure-row">
+      <figure class="figure-block">
+        <img src="../assets/img/ontop-5x5centred-grid.gif" alt="Field-position grid scan, ontop site, centred geometry">
+        <figcaption>Ontop site: scanning the field's lateral center over a 5&times;5 grid (centred on the CO bond), relaxed geometry at each point.</figcaption>
+      </figure>
+      <figure class="figure-block">
+        <img src="../assets/img/ontop-5x5centred-widthscan.gif" alt="Field width scan, ontop site, centred geometry">
+        <figcaption>Same site: sweeping the Gaussian field width at a fixed, bond-centred field position.</figcaption>
+      </figure>
+    </div>
+    <div class="figure-row" style="margin-top: 20px;">
+      <figure class="figure-block">
+        <img src="../assets/img/bridge-5x5grid.gif" alt="Field-position grid scan, bridge site">
+        <figcaption>Bridge site: the equivalent field-position grid scan.</figcaption>
+      </figure>
+      <figure class="figure-block">
+        <img src="../assets/img/field-tilt.gif" alt="Field tilted relative to the surface normal">
+        <figcaption>Tilting the field direction relative to the surface normal.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Model: decomposing the binding energy</h2>
+    <div class="prose">
+      <p>
+        Rather than treating the DFT adsorption energy as a black box, I
+        use a single-level Newns&ndash;Anderson chemisorption model to split
+        it into physically interpretable pieces for each frontier
+        orbital (CO's 5&sigma; donor level and 2&pi;* acceptor level):
+        a <strong>hybridization</strong> energy from broadening against the
+        Cu $d$-band, an <strong>orthogonalization</strong> (Pauli repulsion)
+        energy, and an <strong>electrostatic</strong> term from the induced
+        dipole interacting with the external field. The orbital levels
+        themselves are referenced to the vacuum level and shifted with
+        field via the analytically exact Stark term from the plugin's own
+        external potential.
+      </p>
+    </div>
+    <div class="figure-block">
+      <img src="../assets/figures/eps-a-vs-width.png" alt="Bare orbital energies vs field width for both sites">
+      <figcaption>Vacuum-aligned bare 5&sigma;/2&pi;* levels vs. field width, ontop and bridge sites.</figcaption>
+    </div>
+    <div class="figure-block">
+      <img src="../assets/figures/width-scan-bar.png" alt="Full width-scan energy breakdown bar chart">
+      <figcaption>Full energy breakdown (hybridization, orthogonalization, electrostatic) across the width scan.</figcaption>
+    </div>
+  </section>
+
+  <section>
+    <h2>Model vs. DFT</h2>
+    <div class="prose">
+      <p>
+        The model reproduces the right order of magnitude and sign of the
+        chemisorption energy at both sites, with a single empirical offset
+        (&gamma;) absorbing the gap between this simplified model and the
+        full DFT binding energy. Comparing site-to-site and across the
+        field grid highlights where the single-level picture breaks down
+        — most visibly near the actual CO bond position, and across the
+        strong geometry relaxation that the model itself doesn't capture.
+      </p>
+    </div>
+    <div class="figure-block">
+      <img src="../assets/figures/ontop-literature-vs-dft.png" alt="Model vs DFT adsorption energy, ontop site">
+      <figcaption>Model (literature-parameterized Newns&ndash;Anderson) vs. real DFT adsorption energy, ontop site.</figcaption>
+    </div>
+    <div class="figure-block">
+      <img src="../assets/figures/grid-breakdown-heatmap.png" alt="5x5 grid full breakdown heatmap, both sites">
+      <figcaption>Full breakdown over the 5&times;5 field-position grid: bare orbital energies, occupancies, electronic and electrostatic contributions, model vs. DFT &mdash; ontop (top) and bridge (bottom).</figcaption>
+    </div>
+  </section>
+
+  <section>
+    <h2>What I learned</h2>
+    <div class="prose">
+      <ul>
+        <li>Vacuum-level alignment of the bare CO orbital energies (rather than using literature defaults) meaningfully closes the gap between the model and DFT at zero field.</li>
+        <li>The coupling strength between CO and the Cu $d$-band (a single scaling parameter in the model, borrowed from literature fits across many metals) is under-constrained by only two adsorption sites — refits in different directions are equally consistent with the available calibration data.</li>
+        <li>Most of the residual width-dependence the simple model misses traces back to geometry relaxation physics, not the electronic structure terms themselves.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="callout">
+    [Optional: link to the paper/preprint once published, or to the code
+    repository for the field plugin and analysis scripts, here.]
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="nav-wrap">
+    <span>&copy; <span id="year"></span> [Your Name]</span>
+    <span><a href="../contact.html">[you@example.edu]</a></span>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
