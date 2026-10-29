@@ -25,14 +25,14 @@ python3 -m http.server 8000
 
 ## Deploy to GitHub Pages
 
-1. Create a new **public** repo on GitHub, e.g. `yourusername.github.io`
-   (that exact name gives you a site at `https://yourusername.github.io/`;
-   any other repo name serves at `https://yourusername.github.io/reponame/`,
+1. Create a new **public** repo on GitHub, e.g. `aritriroyiitb.github.io`
+   (that exact name gives you a site at `https://aritriroyiitb.github.io/`;
+   any other repo name serves at `https://aritriroyiitb.github.io/reponame/`,
    in which case every internal link above still works since they're all
    relative paths).
 2. From this directory:
    ```
-   git remote add origin git@github.com:yourusername/yourusername.github.io.git
+   git remote add origin git@github.com:aritriroyiitb/aritriroyiitb.github.io.git
    git branch -M main
    git push -u origin main
    ```
@@ -41,7 +41,7 @@ python3 -m http.server 8000
    and give you the live URL within a minute or two.
 4. Optional custom domain: Settings &rarr; Pages &rarr; Custom domain, plus
    a `CNAME` DNS record at your domain registrar pointing to
-   `yourusername.github.io`.
+   `aritriroyiitb.github.io`.
 
 ## Adding a new project later
 
